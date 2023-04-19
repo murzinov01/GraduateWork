@@ -1,7 +1,5 @@
 package com.example.carbrief
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
@@ -10,20 +8,21 @@ import android.graphics.*
 import android.hardware.camera2.CameraCaptureSession
 import android.hardware.camera2.CameraDevice
 import android.hardware.camera2.CameraManager
+import android.os.Bundle
 import android.os.Handler
 import android.os.HandlerThread
 import android.view.*
+import android.widget.Button
 import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import com.example.carbrief.ml.Model0
 import org.tensorflow.lite.support.common.FileUtil
 import org.tensorflow.lite.support.image.ImageProcessor
 import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.image.ops.ResizeOp
-import android.view.Surface
-import android.view.TextureView
-import android.widget.Button
-import androidx.appcompat.widget.Toolbar
+import java.io.FileOutputStream
 
 
 class CameraActivity : AppCompatActivity() {
@@ -33,6 +32,7 @@ class CameraActivity : AppCompatActivity() {
     private lateinit var cameraDevice: CameraDevice
     private lateinit var imageView: ImageView
     private lateinit var bitmap: Bitmap
+    private var lastBitmap: Bitmap? = null
     private lateinit var model0: Model0
     private lateinit var imageProcessor: ImageProcessor
     private lateinit var getInstructionBtn: Button
@@ -59,7 +59,34 @@ class CameraActivity : AppCompatActivity() {
         }
         getInstructionBtn = findViewById(R.id.getInstructionBtn)
         getInstructionBtn.setOnClickListener {
+            bitmap = textureView.bitmap!!
+            lastBitmap = bitmap.copy(Bitmap.Config.ARGB_8888, false)
+            var image = TensorImage.fromBitmap(bitmap)
+            image = imageProcessor.process(image)
+
+            val outputs = model0.process(image)
+            val location = outputs.locationAsTensorBuffer.floatArray
+            val score = outputs.scoreAsTensorBuffer.floatArray
+            val classes = outputs.categoryAsTensorBuffer.floatArray
+
             val intent = Intent(this, InstructionActivity::class.java)
+            intent.putExtra("location", location)
+            intent.putExtra("score", score)
+            intent.putExtra("classes", classes)
+            intent.putExtra("labels", labels.toTypedArray())
+            println("CLASSES")
+            println(classes)
+
+            val filename = "bitmap.png"
+            val stream: FileOutputStream = openFileOutput(filename, MODE_PRIVATE)
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
+
+            //Cleanup
+            stream.close()
+            bitmap.recycle()
+
+            intent.putExtra("image", filename)
+
             startActivity(intent)
             finish()
         }
@@ -93,7 +120,11 @@ class CameraActivity : AppCompatActivity() {
             }
 
             override fun onSurfaceTextureUpdated(p0: SurfaceTexture) {
-                bitmap = textureView.bitmap!!
+                if (lastBitmap == null) {
+                    bitmap = textureView.bitmap!!
+                } else {
+                    bitmap = lastBitmap!!.copy(Bitmap.Config.ARGB_8888, false)
+                }
                 var image = TensorImage.fromBitmap(bitmap)
                 image = imageProcessor.process(image)
 
@@ -126,7 +157,6 @@ class CameraActivity : AppCompatActivity() {
                             ), paint
                         )
                         paint.style = Paint.Style.FILL
-                        // canvas.drawText(labels.get(classes.get(index).toInt())+" "+fl.toString(), location.get(x+1)*w, location.get(x)*h, paint)
                         canvas.drawText(
                             labels[classes[index].toInt()],
                             location[x + 1] * w,
