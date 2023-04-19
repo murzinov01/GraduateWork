@@ -27,7 +27,7 @@ class OnboardingActivity : AppCompatActivity(), CoroutineScope {
 
         val refreshToken = runBlocking { propertyRepo.readProperty("refreshToken") }
         println(refreshToken)
-        if (refreshToken != null && refreshToken != "") {
+        if (true || refreshToken != null && refreshToken != "") {
             val intent = Intent(this, BottomNavigationActivity::class.java)
             startActivity(intent)
             finish()

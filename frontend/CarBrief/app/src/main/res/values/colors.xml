@@ -16,4 +16,7 @@
     <color name="base_300">#C4C4C4</color>
     <color name="base_500">#7B7B7B</color>
     <color name="auxiliary_900">#AB6830</color>
+    <color name="auxiliary_500">#CA965C</color>
+    <color name="analogous_900">#ECCA94</color>
+    <color name="underline">#D8D6D6</color>
 </resources>

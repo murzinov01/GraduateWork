@@ -4,6 +4,6 @@
     <item
         android:width="167dp"
         android:height="167dp"
-        android:drawable="@mipmap/app_icon"
+        android:drawable="@color/primary_800"
         android:gravity="center" />
 </layer-list>

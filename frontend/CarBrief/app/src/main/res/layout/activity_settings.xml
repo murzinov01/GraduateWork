@@ -3,6 +3,7 @@
     android:id="@+id/settingsActivity"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -16,7 +17,19 @@
         android:gravity="center"
 
         app:titleTextColor="@color/black"
-        tools:layout_editor_absoluteX="0dp" />
+        tools:layout_editor_absoluteX="0dp" >
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/settings"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:layout_gravity="center"/>
+
+    </androidx.appcompat.widget.Toolbar>
 
     <Button
         android:id="@+id/btnLogout"
@@ -37,19 +50,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_marginTop="12dp"
-        android:fontFamily="@font/roboto_medium"
-        android:text="@string/settings"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbarSettings" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

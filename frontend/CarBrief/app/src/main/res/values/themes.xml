@@ -14,7 +14,7 @@
         <!-- Customize your theme here. -->
         <item name="android:button">@color/white</item>
     </style>
-    
+
     <style name="SplashTheme" parent="Theme.AppCompat">
         <item name="android:windowBackground">@drawable/splash_screen</item>
     </style>
@@ -44,4 +44,20 @@
         <item name="colorAccent">@android:color/holo_blue_light</item>
     </style>
 
+    <style name="Theme.CarBrief.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.CarBrief.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.CarBrief.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    
+    <style name="RoundCorner" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10dp</item>
+        <item name="color">@color/white</item>
+
+    </style>
+    
 </resources>

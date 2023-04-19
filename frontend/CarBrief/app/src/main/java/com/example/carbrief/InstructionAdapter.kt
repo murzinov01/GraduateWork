@@ -1,0 +1,31 @@
+package com.example.carbrief
+
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.imageview.ShapeableImageView
+
+class InstructionAdapter(private val instructionList: ArrayList<Instruction>) : RecyclerView.Adapter<InstructionAdapter.ViewHolder>() {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
+        return ViewHolder(itemView)
+    }
+
+    override fun getItemCount(): Int {
+        return instructionList.size
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val currentItem = instructionList[position]
+        holder.titleImage.setImageResource(currentItem.titleImage)
+        holder.tvHeading.text = currentItem.heading
+    }
+
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val titleImage: ShapeableImageView = itemView.findViewById(R.id.title_image)
+        val tvHeading: TextView = itemView.findViewById(R.id.tvHeading)
+    }
+}

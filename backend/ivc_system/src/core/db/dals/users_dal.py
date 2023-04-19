@@ -30,6 +30,14 @@ class UserDAL:
         return self.db_session.query(User).filter(User.username == username).first()
 
     def get_user_by_email(self, email: str) -> User:
+        
+        
+        
+        
+        
+        
+        
+        
         return self.db_session.query(User).filter(User.email == email).first()
 
 
