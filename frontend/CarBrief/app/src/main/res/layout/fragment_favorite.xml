@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Favorite">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:titleTextColor="@color/black">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/favorite_manuals"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        android:layout_gravity="center"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="56dp"
+        app:layoutManager="LinearLayoutManager"
+        android:scrollbars="vertical"
+        android:layout_marginBottom="100dp"/>
+
+    <RelativeLayout
+        android:id="@+id/noFavorites"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:id="@+id/imageNoFavorites"
+            android:layout_centerHorizontal="true"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:src="@drawable/nofavorites" />
+        <TextView
+            android:id="@+id/noFavoritesText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageNoFavorites"
+            android:layout_marginTop="30dp"
+            android:text="@string/no_favorites"
+            android:layout_centerInParent="true"
+            android:textAlignment="center"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="@color/black"
+            android:textSize="24sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/noFavoritesText"
+            android:layout_centerInParent="true"
+            android:textAlignment="center"
+            android:text="@string/no_favorites_descr"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/grey"
+            android:textSize="20sp"/>
+
+    </RelativeLayout>
+
+
+</FrameLayout>

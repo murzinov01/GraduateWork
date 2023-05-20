@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".InstructionEntry"
+    tools:showIn="@layout/activity_instruction_entry">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp">
+
+        <RelativeLayout
+            android:id="@+id/generalInformation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/generalInformationText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/text_margin"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Steering wheel: Buttons Explanation"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="26sp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:layout_below="@id/generalInformationText"
+                android:layout_centerHorizontal="false"
+                android:src="@drawable/steering_wheel_all" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rightSide"
+            android:layout_below="@id/generalInformation"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/rightSideText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/text_margin"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Right side – BMW audio control"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="26sp" />
+            <TextView
+                android:id="@+id/rightSideSubText"
+                android:layout_below="@+id/rightSideText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Starting off at the right side you’ll find audio control buttons."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/rightSideImage"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@id/rightSideSubText"
+                android:layout_centerHorizontal="false"
+                android:src="@drawable/steering_wheel_right_side" />
+
+            <RelativeLayout
+                android:id="@+id/rightSideNumber1Relative"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/rightSideImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/rightSideNumber1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="1. "
+                    android:textColor="@color/primary_900"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/rightSideNumber1Description"
+                    android:layout_toRightOf="@+id/rightSideNumber1"
+                    android:layout_alignTop="@+id/rightSideNumber1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="BMW volume control buttons – allow you to adjust the BMW navigation voice volume, the volume of your music and phone calls."
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rightSideNumber2Relative"
+                android:layout_below="@+id/rightSideNumber1Relative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/rightSideNumber2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="2. "
+                android:textColor="@color/primary_900"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/rightSideNumber2Description"
+                android:layout_toRightOf="@+id/rightSideNumber2"
+                android:layout_alignTop="@+id/rightSideNumber2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:text="BMW radio selection buttons – allow you to skip songs and change radio channels."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rightSideNumber3Relative"
+                android:layout_below="@+id/rightSideNumber2Relative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/rightSideNumber3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="3. "
+                    android:textColor="@color/primary_900"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/rightSideNumber3Description"
+                    android:layout_toRightOf="@+id/rightSideNumber3"
+                    android:layout_alignTop="@+id/rightSideNumber3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Phone call button – helps you answer phone calls coming through Bluetooth or call the last person you spoke to."
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rightSideNumber4Relative"
+                android:layout_below="@+id/rightSideNumber3Relative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/rightSideNumber4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="4. "
+                    android:textColor="@color/primary_900"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/rightSideNumber4Description"
+                    android:layout_toRightOf="@+id/rightSideNumber4"
+                    android:layout_alignTop="@+id/rightSideNumber4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Entertainment display button – makes it possible to display your playlist or the list of radio channels on the BMW head up display or if you lack it, on the digital cluster.  "
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rightSideNumber5Relative"
+                android:layout_below="@+id/rightSideNumber4Relative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/rightSideNumber5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="5. "
+                    android:textColor="@color/primary_900"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/rightSideNumber5Description"
+                    android:layout_toRightOf="@+id/rightSideNumber5"
+                    android:layout_alignTop="@+id/rightSideNumber5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="BMW voice command button – engages the BMW Personal Assistant after a single press, or activates Siri/Google Assistant when long pressing the button."
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rightSideNumber6Relative"
+                android:layout_below="@+id/rightSideNumber5Relative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/rightSideNumber6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="6. "
+                    android:textColor="@color/primary_900"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/rightSideNumber6Description"
+                    android:layout_toRightOf="@+id/rightSideNumber6"
+                    android:layout_alignTop="@+id/rightSideNumber6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="The rocker switch – allows you to go through the tracks displayed on the BMW head up display."
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/leftSide"
+            android:layout_below="@id/rightSide"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/leftSideText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/text_margin"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Left side – BMW cruise control"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="26sp" />
+            <TextView
+                android:id="@+id/leftSideSubText"
+                android:layout_below="@+id/leftSideText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Now that we’ve covered the multimedia controls, let’s take a look at the left side of the wheel and explain what is LIM on a BMW steering wheel or what does the rocker switch do.\n\nThe left portion of the BMW steering wheel is where you’ll find your cruise control buttons allowing you to lock the accelerator at your desired speed and take your foot off the pedal. \n\nThis is how a configuration of these controls looks like in a 2020 X5 equipped with a standard Dynamic Cruise Control."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/leftSideImage"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@id/leftSideSubText"
+                android:layout_centerHorizontal="false"
+                android:src="@drawable/steering_wheel_left_side" />
+
+            <RelativeLayout
+                android:id="@+id/leftSideNumber1Relative"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/leftSideImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/leftSideNumber1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="1. "
+                    android:textColor="@color/primary_900"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/leftSideNumber1Description"
+                    android:layout_toRightOf="@+id/leftSideNumber1"
+                    android:layout_alignTop="@+id/leftSideNumber1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="The speed gauge button – turns the cruise control on or off. When turned on it lights a green cruise control gauge on your BMW digital cluster."
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/leftSideNumber2Relative"
+                android:layout_below="@+id/leftSideNumber1Relative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/leftSideNumber2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="2. "
+                    android:textColor="@color/primary_900"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/leftSideNumber2Description"
+                    android:layout_toRightOf="@+id/leftSideNumber2"
+                    android:layout_alignTop="@+id/leftSideNumber2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="The set button – allows you to set the constant speed when you reach the desired limit."
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/leftSideNumber3Relative"
+                android:layout_below="@+id/leftSideNumber2Relative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/leftSideNumber3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="3. "
+                    android:textColor="@color/primary_900"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/leftSideNumber3Description"
+                    android:layout_toRightOf="@+id/leftSideNumber3"
+                    android:layout_alignTop="@+id/leftSideNumber3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="The speed limit assistant button – won’t allow you to exceed the desired speed for a specific zone unless you initiate an extensive throttle input."
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/leftSideNumber4Relative"
+                android:layout_below="@+id/leftSideNumber3Relative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/leftSideNumber4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="4. "
+                    android:textColor="@color/primary_900"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/leftSideNumber4Description"
+                    android:layout_toRightOf="@+id/leftSideNumber4"
+                    android:layout_alignTop="@+id/leftSideNumber4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="The rocker switch – allows you to increase or decrease a set speed by 1 and 5 mph increments. If you’re equipped with BMW speed limit assist, the system will recognize that the speed limit has changed and will propose the new speed. To accept it, press the set button."
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/leftSideNumber5Relative"
+                android:layout_below="@+id/leftSideNumber4Relative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/leftSideNumber5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="5. "
+                    android:textColor="@color/primary_900"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/leftSideNumber5Description"
+                    android:layout_toRightOf="@+id/leftSideNumber5"
+                    android:layout_alignTop="@+id/leftSideNumber5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="The cancel button – temporarily deactivates the BMW dynamic cruise control just as hitting the brakes."
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/leftSideNumber6Relative"
+                android:layout_below="@+id/leftSideNumber5Relative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/leftSideNumber6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="6. "
+                    android:textColor="@color/primary_900"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/leftSideNumber6Description"
+                    android:layout_toRightOf="@+id/leftSideNumber6"
+                    android:layout_alignTop="@+id/leftSideNumber6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="The resume button – allows you to return to cruising at the set speed."
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/underLeftSideText"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/leftSideNumber6Description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Keep in mind that the BMW steering wheel in models equipped with either Active Cruise Control with Stop &amp; Go, Active Driving Assistant or Ext. Traffic Jam Assistant will include additional cruise control buttons."
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/CentralSide"
+            android:layout_below="@id/leftSide"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/CentralSideText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/text_margin"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Center – How to turn on the heated steering wheel in a BMW?"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="26sp" />
+
+            <ImageView
+                android:id="@+id/CentralSideImage"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@id/CentralSideText"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/steering_wheel_heat_on" />
+
+            <TextView
+                android:id="@+id/CentralSideDescription"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/CentralSideImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Heading over to the center portion of the BMW steering wheel you’ll see every driver’s favorite – the horn. Grand and loud speaks more than a thousand words in critical situations, and for some, even acts as a perfect replacement for a turn signal. "
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/CentralSide2Image"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@id/CentralSideDescription"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/steering_wheel_heat_on_button" />
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/CentralSide2Image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Right beneath it, you’ll find a BMW steering wheel heating button, which, when pressed, activates the heating until manually switched off by another press or turning the car off for more than 15 minutes. In some BMWs this button is located on the left side of the steering column."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</androidx.core.widget.NestedScrollView>

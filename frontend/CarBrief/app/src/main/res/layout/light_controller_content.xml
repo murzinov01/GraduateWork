@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".InstructionEntry"
+    tools:showIn="@layout/activity_instruction_entry">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp">
+
+        <RelativeLayout
+            android:id="@+id/generalInformation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/generalInformationText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/text_margin"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Adaptive light control"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/TheConcept"
+                android:layout_below="@id/generalInformationText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                android:text="The concept" />
+
+            <TextView
+                android:id="@+id/TheConceptDescription"
+                android:layout_below="@id/TheConcept"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:text="Adaptive light control is a variable headlamp control system that enables dynamic illumination of the road surface.\n\nDepending on the steering angle and other parameters, the light from the headlamp follows the course of the road.\n\nIn tight curves, e.g., on mountainous roads or when turning, an additional, corner-illuminating lamp is switched on that lights up the inside of the curve when the vehicle is moving below a certain speed."
+                />
+
+            <TextView
+                android:id="@+id/Activating"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/TheConceptDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                android:text="Activating" />
+
+            <ImageView
+                android:id="@+id/ActivatingDescriptionImage"
+                android:layout_marginTop="8dp"
+                android:layout_below="@+id/Activating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/light_controller_switch_position"/>
+
+            <TextView
+                android:id="@+id/ActivatingDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/ActivatingDescriptionImage"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="-8dp"
+                android:layout_toRightOf="@id/ActivatingDescriptionImage"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Switch position switched with the ignition switched on."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/ActivatingDescription2"
+                android:layout_marginTop="16dp"
+                android:layout_below="@id/ActivatingDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:textSize="18sp"
+                android:text="The turning lamps are automatically switched on depending on the steering angle or the use of turn signals.\n\nTo avoid blinding oncoming traffic, the Adaptive Light Control directs light towards the front passenger side when the vehicle is at a standstill.\n\nWhen driving in reverse, only the turning lamp is active."
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/SelfLevelingHeadlights"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/ActivatingDescription2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                android:text="Self-leveling headlights" />
+
+            <TextView
+                android:id="@+id/SelfLevelingHeadlightsDescription"
+                android:layout_below="@id/SelfLevelingHeadlights"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:textSize="18sp"
+                android:text="The self-leveling headlights feature adapts the light distribution to the contours of the road.\n\nThe light distribution is lowered on hilltops to avoid blinding oncoming traffic and tilted in depressions to increase visibility."
+                android:textColor="@color/black"
+                />
+
+
+            <TextView
+                android:id="@+id/Malfunction"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/SelfLevelingHeadlightsDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                android:text="Malfunction" />
+
+            <TextView
+                android:id="@+id/MalfunctionDescription"
+                android:layout_below="@id/Malfunction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:textSize="18sp"
+                android:text="A Check Control message is displayed.\n\nAdaptive light control is malfunctioning or has failed. Have the system checked as soon as possible."
+                android:textColor="@color/black" />
+
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+
+</androidx.core.widget.NestedScrollView>

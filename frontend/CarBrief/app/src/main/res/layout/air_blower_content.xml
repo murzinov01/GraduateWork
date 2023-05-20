@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".InstructionEntry"
+    tools:showIn="@layout/activity_instruction_entry">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp">
+
+        <RelativeLayout
+            android:id="@+id/generalInformation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/generalInformationText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/text_margin"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Principle of operation"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/generalInformationSubText"
+                android:layout_below="@+id/generalInformationText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Blower adjustment"
+                android:textColor="@color/black"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/BlowerAdjustmentText"
+                android:layout_below="@+id/generalInformationSubText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:text="The blower rotary dial potentiometer has four settings. Each progressive step represents a25% increase in blower volume. The control unit determines the desired blower setting bythe signal from the potentiometer and then sends a voltage signal to the final stage unit.The voltage signal to the final stage unit ranges from 1.8V to a maximum of 7.1V (Normalblower power in Key Memory).\n\nThe final stage unit then regulates blower motor voltage to control the blower volume.There is no automatic influence on the blower setting.\n\nThe blower control potentiometer is the master on/off switch for the IHKR system. Thewater valve is closed (energized) in the blower zero (off) position. The LEDs for re-circulat-ed air and air conditioning are switched off and the compressor is switched off. The reardefroster operation is not affected by the system being switched off."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/AirDistributionText"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/BlowerAdjustmentText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Air distribution"
+                android:textColor="@color/black"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/AirDistributionDescription"
+                android:layout_below="@+id/AirDistributionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:text="The selection of air distribution is carried out using the rotary dial potentiometer (42 steps).Each step of the potentiometer represents a percentage. The percentage indicates thedesired air distribution setting."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:id="@+id/AirDistributionImage"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_below="@+id/AirDistributionDescription"
+                android:src="@drawable/air_distribution_image"/>
+
+            <TextView
+                android:id="@+id/AirDistribution2Description"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/AirDistributionImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Movement of the stratification flap for face ven-tilation is carried out by rotating a thumb wheelbetween the face vent discharge nozzles. Thethumb wheel is connected to a bowden cablethat moves the flap.\n\nThe air distribution for defrost, ventilation andfootwell is performed by a single air distributionstepper motor that is connected to the M-busand controlled by the IHKR control unit."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</androidx.core.widget.NestedScrollView>

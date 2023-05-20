@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".InstructionEntry"
+    tools:showIn="@layout/activity_instruction_entry">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp">
+
+        <RelativeLayout
+            android:id="@+id/generalInformation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/generalInformationText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/text_margin"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Music system and radio controls"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="26sp" />
+
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:id="@+id/musicSystemImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/generalInformationText"
+                android:src="@drawable/music_system_image"/>
+
+
+            <RelativeLayout
+                android:id="@+id/ChangeEntertainmentSources"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/musicSystemImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/ChangeEntertainmentSources1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="1. "
+                    android:textColor="@color/primary_900"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_toRightOf="@+id/ChangeEntertainmentSources1"
+                    android:layout_alignTop="@+id/ChangeEntertainmentSources1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Change entertainment sources"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/ChangeStationTrack"
+                android:layout_below="@+id/ChangeEntertainmentSources"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/ChangeStationTrack1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="2. "
+                    android:textColor="@color/primary_900"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_toRightOf="@+id/ChangeStationTrack1"
+                    android:layout_alignTop="@+id/ChangeStationTrack1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Change station/track"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/ProgrammableMemoryButtons"
+                android:layout_below="@+id/ChangeStationTrack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/ProgrammableMemoryButtons3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="3. "
+                    android:textColor="@color/primary_900"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_toRightOf="@+id/ProgrammableMemoryButtons3"
+                    android:layout_alignTop="@+id/ProgrammableMemoryButtons3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Programmable memory buttons"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/VolumeOnOff"
+                android:layout_below="@+id/ProgrammableMemoryButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/VolumeOnOff4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="4. "
+                    android:textColor="@color/primary_900"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_toRightOf="@+id/VolumeOnOff4"
+                    android:layout_alignTop="@+id/VolumeOnOff4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Volume, on/off"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/ChangeWaveBand"
+                android:layout_below="@+id/VolumeOnOff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/ChangeWaveBand5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="5. "
+                    android:textColor="@color/primary_900"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_toRightOf="@+id/ChangeWaveBand5"
+                    android:layout_alignTop="@+id/ChangeWaveBand5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Change wave band"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/memoryButtons"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/generalInformation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/ProgrammableMemoryButtonsText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/text_margin"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Programmable memory buttons"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="26sp" />
+
+        <TextView
+            android:id="@+id/GeneralInformationText"
+            android:layout_below="@+id/ProgrammableMemoryButtonsText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:text="General information"
+            android:textColor="@color/black"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/GeneralInformationDescription"
+            android:layout_below="@+id/GeneralInformationText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
+            android:text="The iDrive functions can be stored on the programmable memory buttons and called up directly, e.g., radio stations, navigation destinations, phone numbers and entry points into the menu.\n\nThe settings are stored for the remote control currently in use."
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/SavingFunction"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/GeneralInformationDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Saving a function"
+            android:textColor="@color/black"
+            android:textSize="22sp" />
+
+        <RelativeLayout
+            android:id="@+id/HighlightTheFunction"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/SavingFunction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/HighlightTheFunction1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="1. "
+                android:textColor="@color/primary_900"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_toRightOf="@+id/HighlightTheFunction1"
+                android:layout_alignTop="@+id/HighlightTheFunction1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Highlight the function via the iDrive."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/PressTheDesiredButton"
+            android:layout_below="@+id/HighlightTheFunction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/PressTheDesiredButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="2. "
+                android:textColor="@color/primary_900"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_toRightOf="@+id/PressTheDesiredButton2"
+                android:layout_alignTop="@+id/PressTheDesiredButton2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Press the desired button for more than two seconds."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/RunningFunction"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/PressTheDesiredButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Running a function"
+            android:textColor="@color/black"
+            android:textSize="22sp" />
+
+        <ImageView
+            android:id="@+id/OneSixButtonsImage"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/RunningFunction"
+            android:src="@drawable/one_six_numbers"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/OneSixButtonsImage"
+            android:layout_toRightOf="@id/OneSixButtonsImage"
+            android:layout_marginLeft="5dp"
+            android:fontFamily="@font/roboto_regular"
+            android:text="Press the button."
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/ImageDescription"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/OneSixButtonsImage"
+            android:fontFamily="@font/roboto_regular"
+            android:text="The function will run immediately. This means, for example, that the number is dialed when a phone number is selected."
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/DisplayingTheButtonAssignment"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/ImageDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Displaying the button assignment"
+            android:textColor="@color/black"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/DisplayingTheButtonAssignmentDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/DisplayingTheButtonAssignment"
+            android:fontFamily="@font/roboto_regular"
+            android:text="Use a finger to touch the buttons. Do not wear gloves or use objects.\n\nThe key assignment is displayed at the top edge of the screen."
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/ImageWithButtons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/DisplayingTheButtonAssignmentDescription"
+            android:src="@drawable/the_key_assignment"/>
+
+        <TextView
+            android:id="@+id/ImageWithButtonsDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ImageWithButtons"
+            android:fontFamily="@font/roboto_bold"
+            android:textAlignment="center"
+            android:text="The key assignment is displayed at the top edge of the screen"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/UnderImageWithButtonsDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ImageWithButtonsDescription"
+            android:fontFamily="@font/roboto_regular"
+            android:textColor="@color/black"
+            android:text="▷ To display short information: touch the button.\n▷ To display detailed information: touch the button for an extended period."
+            android:textSize="18sp" />
+
+
+
+
+    </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+</androidx.core.widget.NestedScrollView>
