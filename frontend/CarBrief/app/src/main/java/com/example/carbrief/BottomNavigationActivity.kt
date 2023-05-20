@@ -5,7 +5,6 @@ import android.content.Intent
 import android.graphics.*
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.example.carbrief.databinding.ActivityBottomNavigationBinding
 
@@ -27,7 +26,7 @@ class BottomNavigationActivity : AppCompatActivity() {
                 R.id.navigation_home -> replaceFragment(Home())
                 R.id.navigation_profile -> replaceFragment(Profile())
                 R.id.navigation_favorite -> replaceFragment(Favorite())
-                R.id.navigation_settings -> openSettings()
+                R.id.navigation_settings -> replaceFragment(Settings())
 
                 else -> {
 
@@ -51,11 +50,5 @@ class BottomNavigationActivity : AppCompatActivity() {
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.frameLayout, fragment)
         fragmentTransaction.commit()
-    }
-
-    private fun openSettings(){
-        val intent = Intent(this, SettingsActivity::class.java)
-        startActivity(intent)
-        finish()
     }
 }

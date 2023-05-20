@@ -4,5 +4,5 @@ air blower
 display
 light controller
 steering buttons
-gear level
+gear lever
 drive switching

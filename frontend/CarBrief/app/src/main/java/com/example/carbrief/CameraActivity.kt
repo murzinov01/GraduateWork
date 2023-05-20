@@ -3,6 +3,7 @@ package com.example.carbrief
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.graphics.*
 import android.hardware.camera2.CameraCaptureSession
@@ -18,14 +19,21 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import com.example.carbrief.ml.Model0
-import org.tensorflow.lite.support.common.FileUtil
+import com.example.carbrief.ml.Model2
+import com.example.carbrief.ml.Model4
 import org.tensorflow.lite.support.image.ImageProcessor
 import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.image.ops.ResizeOp
 import java.io.FileOutputStream
-
+import org.tensorflow.lite.gpu.CompatibilityList
+import org.tensorflow.lite.gpu.GpuDelegate
+import org.tensorflow.lite.support.model.Model
 
 class CameraActivity : AppCompatActivity() {
+    private lateinit var sharedPref: SharedPreferences
+    private lateinit var modelPreferencesKey: String
+    private lateinit var useGpuKey: String
+    private lateinit var modelType: String
     private lateinit var textureView: TextureView
     private lateinit var cameraManager: CameraManager
     private lateinit var handler: Handler
@@ -34,29 +42,51 @@ class CameraActivity : AppCompatActivity() {
     private lateinit var bitmap: Bitmap
     private var lastBitmap: Bitmap? = null
     private lateinit var model0: Model0
+    private lateinit var model2: Model2
+    private lateinit var model4: Model4
     private lateinit var imageProcessor: ImageProcessor
     private lateinit var getInstructionBtn: Button
     private val paint = Paint()
-    lateinit var labels:List<String>
+    private var labels = listOf(
+        Labels.CLIMATE_CONTROL.text, Labels.MUSIC_SYSTEM.text, Labels.AIR_BLOWER.text,
+        Labels.DISPLAY.text, Labels.LIGHT_CONTROLLER.text, Labels.STEERING_BUTTONS.text,
+        Labels.GEAR_LEVER.text, Labels.DRIVE_SWITCHING.text,
+    )
     private var labelsOnColors = mutableMapOf<String, Int>()
 
     private var colors = listOf(
         Color.BLUE, Color.GREEN, Color.RED, Color.CYAN, Color.WHITE,
         Color.DKGRAY, Color.MAGENTA, Color.YELLOW, Color.RED)
+    private lateinit var options: Model.Options
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_camera)
+        sharedPref = getSharedPreferences(
+            getString(R.string.preference_file_key), Context.MODE_PRIVATE
+        )
+        modelPreferencesKey = getString(R.string.preference_model)
+        useGpuKey = getString(R.string.preference_use_gpu)
+        modelType = sharedPref.getString(modelPreferencesKey, "").toString()
 
         imageView = findViewById(R.id.imageView)
         textureView = findViewById(R.id.textureView)
 
         getPermission()
-        labels =  FileUtil.loadLabels(this, "labels.txt")
 
         for (i in labels.indices) {
             labelsOnColors[labels[i]] = colors[i]
         }
+
+        val compatList = CompatibilityList()
+
+        options = if(sharedPref.getBoolean(useGpuKey, false) && compatList.isDelegateSupportedOnThisDevice) {
+            Model.Options.Builder().setDevice(Model.Device.GPU).build()
+        } else {
+            Model.Options.Builder().setNumThreads(4).build()
+        }
+
+
         getInstructionBtn = findViewById(R.id.getInstructionBtn)
         getInstructionBtn.setOnClickListener {
             bitmap = textureView.bitmap!!
@@ -64,17 +94,36 @@ class CameraActivity : AppCompatActivity() {
             var image = TensorImage.fromBitmap(bitmap)
             image = imageProcessor.process(image)
 
-            val outputs = model0.process(image)
-            val location = outputs.locationAsTensorBuffer.floatArray
-            val score = outputs.scoreAsTensorBuffer.floatArray
-            val classes = outputs.categoryAsTensorBuffer.floatArray
+            val location: FloatArray
+            val score: FloatArray
+            val classes: FloatArray
+
+            when (modelType) {
+                "", "model0" -> {
+                    val outputs = model0.process(image)
+                    location = outputs.locationAsTensorBuffer.floatArray
+                    score = outputs.scoreAsTensorBuffer.floatArray
+                    classes = outputs.categoryAsTensorBuffer.floatArray
+                }
+                "model2" -> {
+                    val outputs = model2.process(image)
+                    location = outputs.locationAsTensorBuffer.floatArray
+                    score = outputs.scoreAsTensorBuffer.floatArray
+                    classes = outputs.categoryAsTensorBuffer.floatArray
+                }
+                else -> {
+                    val outputs = model4.process(image)
+                    location = outputs.locationAsTensorBuffer.floatArray
+                    score = outputs.scoreAsTensorBuffer.floatArray
+                    classes = outputs.categoryAsTensorBuffer.floatArray
+                }
+            }
 
             val intent = Intent(this, InstructionActivity::class.java)
             intent.putExtra("location", location)
             intent.putExtra("score", score)
             intent.putExtra("classes", classes)
             intent.putExtra("labels", labels.toTypedArray())
-            println("CLASSES")
             println(classes)
 
             val filename = "bitmap.png"
@@ -101,7 +150,18 @@ class CameraActivity : AppCompatActivity() {
 
 
         imageProcessor = ImageProcessor.Builder().add(ResizeOp(320, 320, ResizeOp.ResizeMethod.BILINEAR)).build()
-        model0 =  Model0.newInstance(this)
+
+        when (modelType) {
+            "", "model0" -> {
+                model0 = Model0.newInstance(this, options)
+            }
+            "model2" -> {
+                model2 = Model2.newInstance(this, options)
+            }
+            else -> {
+                model4 = Model4.newInstance(this, options)
+            }
+        }
 
         val handlerThread = HandlerThread("videoThread")
         handlerThread.start()
@@ -120,18 +180,38 @@ class CameraActivity : AppCompatActivity() {
             }
 
             override fun onSurfaceTextureUpdated(p0: SurfaceTexture) {
-                if (lastBitmap == null) {
-                    bitmap = textureView.bitmap!!
+                bitmap = if (lastBitmap == null) {
+                    textureView.bitmap!!
                 } else {
-                    bitmap = lastBitmap!!.copy(Bitmap.Config.ARGB_8888, false)
+                    lastBitmap!!.copy(Bitmap.Config.ARGB_8888, false)
                 }
                 var image = TensorImage.fromBitmap(bitmap)
                 image = imageProcessor.process(image)
 
-                val outputs = model0.process(image)
-                val location = outputs.locationAsTensorBuffer.floatArray
-                val score = outputs.scoreAsTensorBuffer.floatArray
-                val classes = outputs.categoryAsTensorBuffer.floatArray
+                val location: FloatArray
+                val score: FloatArray
+                val classes: FloatArray
+
+                when (modelType) {
+                    "", "model0" -> {
+                        val outputs = model0.process(image)
+                        location = outputs.locationAsTensorBuffer.floatArray
+                        score = outputs.scoreAsTensorBuffer.floatArray
+                        classes = outputs.categoryAsTensorBuffer.floatArray
+                    }
+                    "model2" -> {
+                        val outputs = model2.process(image)
+                        location = outputs.locationAsTensorBuffer.floatArray
+                        score = outputs.scoreAsTensorBuffer.floatArray
+                        classes = outputs.categoryAsTensorBuffer.floatArray
+                    }
+                    else -> {
+                        val outputs = model4.process(image)
+                        location = outputs.locationAsTensorBuffer.floatArray
+                        score = outputs.scoreAsTensorBuffer.floatArray
+                        classes = outputs.categoryAsTensorBuffer.floatArray
+                    }
+                }
 
                 val mutableBitMap = bitmap.copy(Bitmap.Config.ARGB_8888, true)
                 val canvas = Canvas(mutableBitMap)
@@ -175,7 +255,17 @@ class CameraActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        model0.close()
+        when (modelType) {
+            "", "model0" -> {
+                model0.close()
+            }
+            "model2" -> {
+                model2.close()
+            }
+            else -> {
+                model4.close()
+            }
+        }
         cameraDevice.close()
     }
 

@@ -140,4 +140,30 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="instructions">Instructions</string>
+    <string name="title_activity_instruction_entry">InstructionEntry</string>
+
+    <string name="climate_control_topic">Climate control system</string>
+    <string name="music_system_topic">Music system</string>
+    <string name="air_blower_topic">Air blower</string>
+    <string name="display_topic">Main display, multimedia system</string>
+    <string name="light_controller_topic">Light switch controller</string>
+    <string name="steering_buttons_topic">Steering wheel buttons</string>
+    <string name="gear_lever_topic">Gear lever</string>
+    <string name="drive_switching_topic">I Drive controller</string>
+    <string name="preference_file_key">Preference file key</string>
+    <string name="preference_favorites_set">Preference favorites list</string>
+    <string name="preference_model">Preference model</string>
+    <string name="preference_use_gpu">Use gpu</string>
+    <string name="favorite_manuals">Favorite manuals</string>
+    <string name="no_favorites">No Favorites</string>
+    <string name="no_favorites_descr">You can add an item to your\nfavorites list by clicking\nthe camera button below</string>
+    <string name="light_model">Light model</string>
+    <string name="model">Model</string>
+    <string name="average_model">Average model</string>
+    <string name="heavy_model">Heavy model</string>
+    <string name="model_description">ML backend used for object detection</string>
+    <string name="light_model_description">Provides higher frame rate and lower accuracy</string>
+    <string name="profile">Profile</string>
+    <string name="profile_image_uri">profile image uri</string>
+    <string name="save_changes">save changes</string>
 </resources>

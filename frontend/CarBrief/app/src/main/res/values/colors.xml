@@ -12,11 +12,16 @@
     <color name="primary_600">#ECBD6B</color>
     <color name="primary_500">#EEC373</color>
     <color name="primary_400">#F1CC88</color>
+    <color name="primary_100">#FAEDD5</color>
+    <color name="primary_50">#FDF8EE</color>
     <color name="base_100">#E9E9E9</color>
     <color name="base_300">#C4C4C4</color>
     <color name="base_500">#7B7B7B</color>
     <color name="auxiliary_900">#AB6830</color>
     <color name="auxiliary_500">#CA965C</color>
     <color name="analogous_900">#ECCA94</color>
+    <color name="analogous_200">#FAEFDD</color>
     <color name="underline">#D8D6D6</color>
+    <color name="complementary_900">#57361F</color>
+    <color name="grey">#a8a8a8</color>
 </resources>

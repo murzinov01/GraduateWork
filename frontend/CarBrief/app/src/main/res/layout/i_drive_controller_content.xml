@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".InstructionEntry"
+    tools:showIn="@layout/activity_instruction_entry">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp">
+
+        <RelativeLayout
+            android:id="@+id/generalInformation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/generalInformationText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/text_margin"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Controls"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="26sp" />
+
+            <ImageView
+                android:id="@+id/sportModeImage"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/generalInformationText"
+                android:layout_centerHorizontal="false"
+                android:src="@drawable/i_drive_controller_whole" />
+
+            <RelativeLayout
+                android:id="@+id/ControlDisplay"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/sportModeImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/ControlDisplay1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="1. "
+                    android:textColor="@color/primary_900"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/ControlDisplay1Description"
+                    android:layout_toRightOf="@+id/ControlDisplay1"
+                    android:layout_alignTop="@+id/ControlDisplay1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Control Display"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/ControllerWithButtons"
+                android:layout_below="@+id/ControlDisplay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/ControllerWithButtons2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="2. "
+                    android:textColor="@color/primary_900"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/ControllerWithButtons2Description"
+                    android:layout_toRightOf="@+id/ControllerWithButtons2"
+                    android:layout_alignTop="@+id/ControllerWithButtons2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Controller with buttons"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+
+                <TextView
+                    android:id="@+id/ControllerWithButtons2UnderDescription"
+                    android:layout_below="@+id/ControllerWithButtons2Description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="You can use the buttons to open the menus directly. The controller can be used to select the menu items and create settings."
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/OtherButtons"
+                android:layout_below="@+id/ControllerWithButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/OtherButtons3Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="> Move in four directions, arrows "
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/OtherButtons3"
+                    android:layout_toRightOf="@+id/OtherButtons3Text"
+                    android:layout_alignTop="@+id/OtherButtons3Text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="3"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/TurnArrow4"
+                android:layout_below="@+id/OtherButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/TurnArrowText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="> Turn, arrow "
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/TurnArrow"
+                    android:layout_toRightOf="@+id/TurnArrowText"
+                    android:layout_alignTop="@+id/TurnArrowText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="4"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/PushArrow5"
+                android:layout_below="@+id/TurnArrow4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/PushArrowText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="> Push, arrow "
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/PushArrow"
+                    android:layout_toRightOf="@+id/PushArrowText"
+                    android:layout_alignTop="@+id/PushArrowText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="5"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ControlDisplayLayout"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/generalInformation"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/ControlDisplayText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/text_margin"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Control Display"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/NotesText"
+                android:layout_below="@id/ControlDisplayText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="19sp"
+                android:textColor="@color/black"
+                android:text="Notes" />
+
+            <TextView
+                android:id="@+id/NotesTextDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/NotesText"
+                android:fontFamily="@font/roboto_regular"
+
+                android:text="> Follow care instructions when cleaning the Control Display.\n> Do not store items in the region in front of the Control Display; doing so may damage the Control Display."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+
+            <TextView
+                android:id="@+id/SwitchingOff"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/NotesTextDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="19sp"
+                android:textColor="@color/black"
+                android:text="Switching off" />
+
+            <RelativeLayout
+                android:id="@+id/PressOption"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/SwitchingOff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/PressOption1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="1. "
+                    android:textColor="@color/primary_900"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_toRightOf="@+id/PressOption1"
+                    android:layout_alignTop="@+id/PressOption1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Press the OPTION button."
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/SwitchOffControlDisplay"
+                android:layout_below="@+id/PressOption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/SwitchOffControlDisplay2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="2. "
+                    android:textColor="@color/primary_900"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_toRightOf="@+id/SwitchOffControlDisplay2"
+                    android:layout_alignTop="@+id/SwitchOffControlDisplay2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Switch off control display"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/SwitchOffControlDisplay"
+                android:src="@drawable/i_drive_switch_off" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/SwitchingOn"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/ControlDisplayLayout"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/SwitchingOnText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="19sp"
+                android:textColor="@color/black"
+                android:text="Switching on" />
+
+            <TextView
+                android:id="@+id/SwitchingOnDescription"
+                android:layout_below="@+id/SwitchingOnText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:text="Press the controller to switch on." />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ButtonsOnTheController"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/SwitchingOn"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/ButtonsOnTheControllerText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="19sp"
+                android:textColor="@color/black"
+                android:text="Buttons on the controller" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ButtonsOnTheControllerText"
+                android:src="@drawable/buttons_on_the_controller"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</androidx.core.widget.NestedScrollView>

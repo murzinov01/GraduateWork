@@ -1,0 +1,911 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".InstructionEntry"
+    tools:showIn="@layout/activity_instruction_entry">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp">
+
+        <RelativeLayout
+            android:id="@+id/manualAirDistribution"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/airDistributionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/text_margin"
+                android:text="1. Manual air distribution" />
+
+            <ImageView
+                android:id="@+id/airDistributionImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/airDistributionText"
+                android:src="@drawable/air_distribution_image"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/airDistributionImage"
+                android:layout_toRightOf="@id/airDistributionImage"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Press the button repeatedly to select a program"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/airDistributionImage"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/roboto_regular"
+
+                android:text="▷ Upper body region.\n▷ Upper body region and footwell.\n▷ Footwell.\n▷ Windows and footwell: driver's side only.\n▷ Windows, upper body region and footwell:\n\ndriver's side only.\n\nIf the windows are fogged over, press the AUTO button on the driver's side to utilize the condensation sensor."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/Temperature"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/manualAirDistribution"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/TemperatureText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/text_margin"
+                android:text="2. Temperature" />
+
+            <ImageView
+                android:id="@+id/TemperatureImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/TemperatureText"
+                android:src="@drawable/temperature"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/TemperatureImage"
+                android:layout_toRightOf="@id/TemperatureImage"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Turn the wheel to set the desired temperature."
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/TemperatureImage"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="The automatic climate control achieves this temperature as quickly as possible, if necessary with the maximum cooling or heating capacity, and then keeps it constant.\n\nAvoid rapidly switching between different temperature settings. The automatic climate control will not have sufficient time to adjust the set temperature."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/AUTOProgram"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/Temperature"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/AUTOProgramText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/text_margin"
+                android:text="3. AUTO program" />
+
+            <ImageView
+                android:id="@+id/AUTOProgramImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/AUTOProgramText"
+                android:src="@drawable/auto_program"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/AUTOProgramImage"
+                android:layout_toRightOf="@id/AUTOProgramImage"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Press the button."
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/AUTOProgramImage"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Air volume, air distribution, and temperature are controlled automatically.\n\nDepending on the selected temperature, AUTO intensity, and outside influences, the air is directed directed to the windshield, side windows, upper body, and into the footwell.\n\nThe cooling function, is switched on automatically with the AUTO program.\n\nAt the same time, a condensation sensor controls the program so as to prevent window condensation as much as possible"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/IntensityAUTOProgram"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/AUTOProgram"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/IntensityAUTOProgramText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/text_margin"
+                android:text="4. Intensity of the AUTO program" />
+
+            <ImageView
+                android:id="@+id/IntensityAUTOProgramImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/IntensityAUTOProgramText"
+                android:src="@drawable/intensity_auto_program"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/IntensityAUTOProgramImage"
+                android:layout_toRightOf="@id/IntensityAUTOProgramImage"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Press the left or right side of the button:"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/IntensityAUTOProgramImage"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Decrease or increase the intensity.\n\nThe selected intensity is shown on the display of the automatic climate control."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/AirVolumeManual"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/IntensityAUTOProgram"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/AirVolumeManualText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/text_margin"
+                android:text="5. Intensity of the AUTO program" />
+
+            <ImageView
+                android:id="@+id/AirVolumeManualImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/AirVolumeManualText"
+                android:src="@drawable/intensity_auto_program"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/AirVolumeManualImage"
+                android:layout_toRightOf="@id/AirVolumeManualImage"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Press the left or right side of the button:"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/AirVolumeManualImage"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Decrease or increase air volume.\n\nThe selected air volume is shown on the display of the automatic climate control.\n\nThe air volume of the automatic climate control may be reduced automatically to save battery power."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/DefrostingWindows"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/AirVolumeManual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/DefrostingWindowsText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/text_margin"
+                android:text="6. Defrosting windows and removing condensation" />
+
+            <ImageView
+                android:id="@+id/DefrostingWindowsImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/DefrostingWindowsText"
+                android:src="@drawable/defrosting_windows" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/DefrostingWindowsImage"
+                android:layout_toRightOf="@id/DefrostingWindowsImage"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Press the button."
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/DefrostingWindowsImage"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Ice and condensation are quickly removed from the windshield and the front side windows.\n\nThe air volume can be adjusted when the program is active.\n\nIf the windows are fogged over, additionally switch on the cooling function or press the AUTO button to utilize the condensation sensor."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/MaximumCooling"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/DefrostingWindows"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/MaximumCoolingText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/text_margin"
+                android:text="7. Maximum cooling" />
+
+            <ImageView
+                android:id="@+id/MaximumCoolingImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/MaximumCoolingText"
+                android:src="@drawable/maximum_cooling" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/MaximumCoolingImage"
+                android:layout_toRightOf="@id/MaximumCoolingImage"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Press the button."
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/MaximumCoolingImage"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="The system is set to the lowest temperature, maximum air volume and recirculatedair mode.\n\nAir flows out of the vents for the upper body region.\n\nOpen them for this purpose.\n\nAir is cooled as quickly as possible:\n▷ At an external temperature of approx. 32 ℉/ 0 ℃.\n▷ When the engine is running.\n\nThe air volume can be adjusted when the program is active."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/AutomaticRecirculatedAir"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/MaximumCooling"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/AutomaticRecirculatedAirText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/text_margin"
+                android:text="8. Automatic recirculated-air control/ recirculated-air mode" />
+
+            <TextView
+                android:id="@+id/AutomaticRecirculatedAirTextAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/AutomaticRecirculatedAirText"
+                android:fontFamily="@font/roboto_regular"
+                android:text="You can respond to unpleasant odors or pollutants in the immediate environment by temporarily suspending the supply of outside air. The system then recirculates the air currently within the vehicle."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/AutomaticRecirculatedAirImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/AutomaticRecirculatedAirTextAdd"
+                android:src="@drawable/automatic_recirculated_air" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/AutomaticRecirculatedAirImage"
+                android:layout_toRightOf="@id/AutomaticRecirculatedAirImage"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Press the button repeatedly to select an operating mode:"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/AutomaticRecirculatedAirDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/AutomaticRecirculatedAirImage"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="▷ LEDs off: outside air flows in continuously.\n▷ Left LED on, automatic recirculated-air control:\n\na sensor detects pollutants in the outside air and controls the shut-off automatically.\n▷ Right LED on, recirculated-air mode: the supply of outside air into the vehicle is permanently blocked.\n\nIf the windows are fogged over, switch off the recirculated-air mode and press the AUTO button on the driver's side to utilize the condensation sensor. Make sure that air can flow onto the windshield."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/AutomaticRecirculatedAirImageAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/AutomaticRecirculatedAirDescription"
+                android:src="@drawable/warn" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/AutomaticRecirculatedAirImageAdd"
+                android:layout_toRightOf="@id/AutomaticRecirculatedAirImageAdd"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Continuous recirculated-air mode"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/AutomaticRecirculatedAirImageAdd"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="The recirculated-air mode should not be used for an extended period of time, as the air quality inside the vehicle deteriorates steadily."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/CoolingFunction"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/AutomaticRecirculatedAir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/CoolingFunctionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/text_margin"
+                android:text="9. Cooling function" />
+
+            <TextView
+                android:id="@+id/CoolingFunctionAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/CoolingFunctionText"
+                android:fontFamily="@font/roboto_regular"
+                android:text="The passenger compartment can only be cooled with the engine running."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/CoolingFunctionImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/CoolingFunctionAdd"
+                android:src="@drawable/cooling" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/CoolingFunctionImage"
+                android:layout_toRightOf="@id/CoolingFunctionImage"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Press the button."
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/CoolingFunctionImage"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="The air is cooled and dehumidified and – depending on the temperature setting – warmed again.\n\nDepending on the weather, the windshield may fog up briefly when the engine is started.\n\nThe cooling function is switched on automatically with the AUTO program.\n\nWhen using the automatic climate control, condensation water, develops that exits underneath the vehicle."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/RearWindowDefroster"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/CoolingFunction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/RearWindowDefrosterText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/text_margin"
+                android:text="10. Rear window defroster" />
+
+            <ImageView
+                android:id="@+id/RearWindowDefrosterImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/RearWindowDefrosterText"
+                android:src="@drawable/rear_window_defroster" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/RearWindowDefrosterImage"
+                android:layout_toRightOf="@id/RearWindowDefrosterImage"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Press the button."
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/RearWindowDefrosterImage"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="The rear window defroster switches off automatically after a certain period of time."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ALLProgram"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/RearWindowDefroster"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/ALLProgramText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/text_margin"
+                android:text="11. ALL program" />
+
+            <ImageView
+                android:id="@+id/ALLProgramImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ALLProgramText"
+                android:src="@drawable/all_program" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/ALLProgramImage"
+                android:layout_toRightOf="@id/ALLProgramImage"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Press the button."
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ALLProgramImage"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="The current settings on the driver's side for temperature, air volume, air distribution, and AUTO program are transferred to the front passenger side and to the left and right rear.\n\nThe program is switched off if the settings on the front passenger side or in the rear are changed."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ResidualHeat"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/ALLProgram"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/ResidualHeatText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/text_margin"
+                android:text="12. Residual heat" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ResidualHeatText"
+                android:fontFamily="@font/roboto_regular"
+                android:text="The heat stored in the engine is used to heat the interior."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/FunctionalRequirement"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/ResidualHeat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/FunctionalRequirementText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                android:layout_margin="@dimen/text_margin"
+                android:text="13. Functional requirement" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/FunctionalRequirementText"
+                android:fontFamily="@font/roboto_regular"
+                android:text="▷ Up to 20 minutes after the engine has been switched off.\n▷ Warm engine.\n▷ The battery is sufficiently charged.\n▷ External temperature below 77 ℉/25 ℃"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/SwitchingOn"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/FunctionalRequirement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/SwitchingOnText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:fontFamily="@font/roboto_bold"
+                android:text="14. Switching on"
+                android:textColor="@color/black"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/SwitchingOnSubText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/SwitchingOnText"
+                android:fontFamily="@font/roboto_regular"
+                android:text="1. Switch off the ignition."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/SwitchingOnSubSecondText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/SwitchingOnSubText"
+                android:fontFamily="@font/roboto_regular"
+                android:text="2."
+                android:layout_marginTop="25dp"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/SwitchingOnImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/SwitchingOnSubSecondText"
+                android:layout_toRightOf="@id/SwitchingOnSubSecondText"
+                android:src="@drawable/switchin_on" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/SwitchingOnImage"
+                android:layout_toRightOf="@id/SwitchingOnImage"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Press the right side of the button on the driver's side."
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/SwitchingOnImageAdd"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/SwitchingOnSubSecondText"
+                android:src="@drawable/warm_up" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_alignBottom="@id/SwitchingOnImageAdd"
+                android:layout_toRightOf="@id/SwitchingOnImageAdd"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="is shown on the display of the automatic climate control."
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/SwitchingOnImageAdd"
+                android:fontFamily="@font/roboto_regular"
+                android:text="The interior temperature, air volume and air distribution can be adjusted with the ignition switched on."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/SwitchingOff"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/SwitchingOn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/SwitchingOffText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:fontFamily="@font/roboto_bold"
+                android:text="15. Switching off"
+                android:textColor="@color/black"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/SwitchingOffSubText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/SwitchingOffText"
+                android:fontFamily="@font/roboto_regular"
+                android:text="At the lowest fan speed, press the left side of the button on the driver's side."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+
+            <ImageView
+                android:id="@+id/SwitchingOffImageAdd"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/SwitchingOffSubText"
+                android:src="@drawable/warm_up" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_alignBottom="@id/SwitchingOffImageAdd"
+                android:layout_toRightOf="@id/SwitchingOffImageAdd"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="on the display of the automatic climate control goes out."
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/SwitchingTheSystemOnOff"
+            android:layout_marginTop="30dp"
+            android:layout_below="@id/SwitchingOff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:fontFamily="@font/roboto_bold"
+                android:layout_centerHorizontal="true"
+                android:text="Switching the system on/off"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="22sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/SwitchingOffSystem"
+            android:layout_below="@id/SwitchingTheSystemOnOff"
+            android:layout_marginTop="-10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/SwitchingOffSystemText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:fontFamily="@font/roboto_bold"
+                android:text="16. Switching off"
+                android:textColor="@color/black"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/SwitchingOffSystemSubText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/SwitchingOffSystemText"
+                android:fontFamily="@font/roboto_regular"
+                android:text="▷ Complete system:"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/SwitchingOffSystemImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/SwitchingOffSystemSubText"
+                android:src="@drawable/switching_off_on" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/SwitchingOffSystemImage"
+                android:layout_toRightOf="@id/SwitchingOffSystemImage"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="At the lowest fan speed, press the left side of the button on the driver's side."
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/SwitchingOffSystem2SubText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/SwitchingOffSystemImage"
+                android:fontFamily="@font/roboto_regular"
+                android:text="▷ On the front passenger side:"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/SwitchingOffSystem2Image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/SwitchingOffSystem2SubText"
+                android:src="@drawable/switching_off_on" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/SwitchingOffSystem2Image"
+                android:layout_toRightOf="@id/SwitchingOffSystem2Image"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="At the lowest fan speed, press the left side of the button on the front passenger side."
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/SwitchingOnSystem"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/SwitchingOffSystem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/SwitchingOnSystemText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:fontFamily="@font/roboto_bold"
+                android:text="17. Switching on"
+                android:textColor="@color/black"
+                android:textSize="22sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/SwitchingOnSystemText"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Press any button."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/Microfilter"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/SwitchingOnSystem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/MicrofilterText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/text_margin"
+                android:layout_marginTop="@dimen/text_margin"
+                android:layout_marginEnd="@dimen/text_margin"
+                android:layout_marginBottom="@dimen/text_margin"
+                android:fontFamily="@font/roboto_bold"
+                android:text="18. Microfilter/activated-charcoal filter"
+                android:textColor="@color/black"
+                android:textSize="22sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/MicrofilterText"
+                android:fontFamily="@font/roboto_regular"
+                android:text="The microfilter removes dust and pollen from the incoming air.\n\nThe activated-charcoal filter removes gaseous pollutants from the outside air that enters the vehicle.\n\nThis combined filter should be replaced during scheduled maintenance, of your vehicle."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+</androidx.core.widget.NestedScrollView>

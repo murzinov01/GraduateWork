@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".InstructionEntry"
+    tools:showIn="@layout/activity_instruction_entry">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp">
+
+        <RelativeLayout
+            android:id="@+id/generalInformation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/generalInformationText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/text_margin"
+                android:fontFamily="@font/roboto_bold"
+                android:text="General information"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="26sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/generalInformationText"
+                android:fontFamily="@font/roboto_regular"
+
+                android:text="The main menu is divided into two areas. The left area contains menu items that can be used to call up all the iDrive functions. The right area contains widgets that provide quick access to certain functions.\n\n1. Via the Controller.\n2. Via the touchscreen.\n3. Via the BMW Intelligent Personal Assistant.\n4. Depending on the equipment: with the gesture control."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/safetyInformation"
+            android:layout_below="@id/generalInformation"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/safetyInformationText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Safety information"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/warningText"
+                android:layout_below="@id/safetyInformationText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="19sp"
+                android:textColor="@color/black"
+                android:text="Warning" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/warningText"
+                android:fontFamily="@font/roboto_regular"
+
+                android:text="Operating the integrated information systems and communication devices while driving can distract from traffic. It is possible to lose control of the vehicle. There is a risk of an accident. Only use the systems or devices when the traffic situation allows. As warranted, stop and use the systems and devices while the vehicle is stationery."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/InputAndDisplay"
+            android:layout_below="@id/safetyInformation"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/InputAndDisplayText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Input and display"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/mainMenuText"
+                android:layout_below="@id/InputAndDisplayText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="24sp"
+                android:textColor="@color/black"
+                android:text="Main menu" />
+
+            <TextView
+                android:id="@+id/generalInformationSubTitleText"
+                android:layout_below="@id/mainMenuText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="19sp"
+                android:textColor="@color/black"
+                android:text="General information" />
+
+            <TextView
+                android:id="@+id/InputAndDisplayDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/generalInformationSubTitleText"
+                android:fontFamily="@font/roboto_regular"
+
+                android:text="The main menu is divided into two areas. The left area contains menu items that can be used to call up all the iDrive functions. The right area contains widgets that provide quick access to certain functions."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/InputAndDisplayDescription"
+                android:src="@drawable/display_content"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/mediaRadio"
+            android:layout_width="match_parent"
+            android:layout_below="@id/InputAndDisplay"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/mediaRadioText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Media/Radio"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="26sp" />
+
+            <ImageView
+                android:id="@+id/mediaRadioImage"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_below="@+id/mediaRadioText"
+                android:src="@drawable/media_radio"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/mediaRadioImage"
+                android:layout_toRightOf="@id/mediaRadioImage"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="All functions of the entertainment system, e.g., radio stations or connection with external devices."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/Communication"
+            android:layout_width="match_parent"
+            android:layout_below="@id/mediaRadio"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/CommunicationText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Communication"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="26sp" />
+
+            <ImageView
+                android:id="@+id/CommunicationImage"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_below="@+id/CommunicationText"
+                android:src="@drawable/communication"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/CommunicationImage"
+                android:layout_toRightOf="@id/CommunicationImage"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Phone and message functions, e-mail and calendar, and also the connection and management of mobile devices, such as smartphones."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/Navigation"
+            android:layout_width="match_parent"
+            android:layout_below="@id/Communication"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/NavigationText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Navigation"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="26sp" />
+
+            <ImageView
+                android:id="@+id/NavigationImage"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="-15dp"
+                android:layout_below="@+id/NavigationText"
+                android:src="@drawable/navigation"/>
+
+            <TextView
+                android:id="@+id/navigationDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/NavigationImage"
+                android:layout_toRightOf="@id/NavigationImage"
+                android:layout_marginLeft="-15dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Access to the navigation system, destination input and traffic bulletins. Configurable map views and other functions, such as points of interest and areas to be avoided."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/MyCarText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/navigationDescription"
+                android:fontFamily="@font/roboto_bold"
+                android:layout_marginTop="10dp"
+                android:text="My Car"
+                android:textColor="@color/black"
+                android:textSize="22sp" />
+
+            <ImageView
+                android:id="@+id/MyCarImage"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_below="@+id/MyCarText"
+                android:src="@drawable/my_car"/>
+
+            <TextView
+                android:id="@+id/myCarDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/MyCarImage"
+                android:layout_toRightOf="@id/MyCarImage"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Information about vehicle status and trips. Access to the Integrated Owner’s Manual and also the administration of driver profiles and range of adjustments for vehicle and iDrive."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/AppsText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/myCarDescription"
+                android:fontFamily="@font/roboto_bold"
+                android:layout_marginTop="10dp"
+                android:text="Apps"
+                android:textColor="@color/black"
+                android:textSize="22sp" />
+
+            <ImageView
+                android:id="@+id/AppsImage"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_below="@+id/AppsText"
+                android:src="@drawable/apps"/>
+
+            <TextView
+                android:id="@+id/appsDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/AppsImage"
+                android:layout_toRightOf="@id/AppsImage"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Management of apps, access to apps and vehicle functions. Additional apps and vehicle functions can be purchased from the BMW Store."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/WidgetsText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/appsDescription"
+                android:fontFamily="@font/roboto_bold"
+                android:layout_marginTop="10dp"
+                android:text="Widgets"
+                android:textColor="@color/black"
+                android:textSize="22sp" />
+
+            <ImageView
+                android:id="@+id/WidgetsImage"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_below="@+id/WidgetsText"
+                android:src="@drawable/widgets"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/WidgetsImage"
+                android:layout_toRightOf="@id/WidgetsImage"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Widgets provide quick access to frequently used functions. The configured widgets display dynamic contents such as the navigation map, and serve as interfaces at the same time."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/LettersAndNumbers"
+            android:layout_width="match_parent"
+            android:layout_below="@id/Navigation"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/LettersAndNumbersText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Letters and numbers"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/lettersAndNumbersDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/LettersAndNumbersText"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Letters and numbers can be selected when making the destination input, for example.\nLetters and numbers can be entered using the Controller, the touchpad, touchscreen or voice control. The keyboard’s display changes automatically."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lettersAndNumbersDescription"
+                android:src="@drawable/letters_and_numbers"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/EntryComparison"
+            android:layout_width="match_parent"
+            android:layout_below="@id/LettersAndNumbers"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/EntryComparisonText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Entry comparison"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="26sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/EntryComparisonText"
+                android:fontFamily="@font/roboto_regular"
+                android:text="When entering names and addresses, the choice is narrowed down with every letter and number and added automatically as needed.\n\nEntries are continuously compared with data stored in the vehicle.\n\t\t● Only those letters and numbers are offered during entry for which data is available.\n\t\t● Destination search: place names can be entered in all languages that are available in iDrive."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ActivatingDeactivatingTheFunctions"
+            android:layout_width="match_parent"
+            android:layout_below="@id/EntryComparison"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/ActivatingDeactivatingTheFunctionsText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Activating/deactivating the functions"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/ActivatingDeactivatingTheFunctionsDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ActivatingDeactivatingTheFunctionsText"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Several menu items are preceded by a checkbox. The checkbox indicates whether the function is activated or deactivated. Selecting the menu item activates or deactivates the function."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/ActivatingDeactivatingTheFunctionsImage"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_below="@+id/ActivatingDeactivatingTheFunctionsDescription"
+                android:src="@drawable/activating_deactivating_the_functions"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/ActivatingDeactivatingTheFunctionsImage"
+                android:layout_toRightOf="@id/ActivatingDeactivatingTheFunctionsImage"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="● The function is activated.\n\n● The function is deactivated."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/StatusInformation"
+            android:layout_width="match_parent"
+            android:layout_below="@id/ActivatingDeactivatingTheFunctions"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/StatusInformationText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Status information"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/generalInformationStatusText"
+                android:layout_below="@id/StatusInformationText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="19sp"
+                android:textColor="@color/black"
+                android:text="General information" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/generalInformationStatusText"
+                android:fontFamily="@font/roboto_regular"
+                android:text="The status field can be found in the upper area of the Control Display. Status information is displayed in the form of symbols."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/TelephoneSymbols"
+            android:layout_width="match_parent"
+            android:layout_below="@id/StatusInformation"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/TelephoneSymbolsText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Telephone symbols"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="26sp" />
+
+            <ImageView
+                android:id="@+id/TelephoneSymbolsImage1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/TelephoneSymbolsText"
+                android:src="@drawable/telephone_symbols1"/>
+
+            <ImageView
+                android:id="@+id/TelephoneSymbolsImage2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/TelephoneSymbolsImage1"
+                android:src="@drawable/telephone_symbols2"/>
+
+            <ImageView
+                android:id="@+id/TelephoneSymbolsImage3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/TelephoneSymbolsImage2"
+                android:src="@drawable/telephone_symbols3"/>
+
+            <ImageView
+                android:id="@+id/TelephoneSymbolsImage4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/TelephoneSymbolsImage3"
+                android:src="@drawable/telephone_symbols4"/>
+
+            <ImageView
+                android:id="@+id/TelephoneSymbolsImage5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/TelephoneSymbolsImage4"
+                android:src="@drawable/telephone_symbols5"/>
+
+            <ImageView
+                android:id="@+id/TelephoneSymbolsImage6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/TelephoneSymbolsImage5"
+                android:src="@drawable/telephone_symbols6"/>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</androidx.core.widget.NestedScrollView>

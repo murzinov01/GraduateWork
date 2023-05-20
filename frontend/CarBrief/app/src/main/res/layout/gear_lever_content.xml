@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".InstructionEntry"
+    tools:showIn="@layout/activity_instruction_entry">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp">
+
+        <RelativeLayout
+            android:id="@+id/generalInformation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/generalInformationText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/text_margin"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Sport program and manual mode M/S"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/activatingSportModeText"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/generalInformationText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Activating the sport program"
+                android:textColor="@color/black"
+                android:textSize="22sp" />
+
+            <ImageView
+                android:id="@+id/sportModeImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/activatingSportModeText"
+                android:layout_centerHorizontal="false"
+                android:src="@drawable/gear_lever" />
+
+            <TextView
+                android:id="@+id/sportModeImageDescription"
+                android:layout_below="@+id/sportModeImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:textAlignment="center"
+                android:text="Activating the sport program"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/activatingSportModeDescription"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/sportModeImageDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Push the selector lever to the left out of transmission position D.\n\nThe Sport program is activated and DS is displayed in the instrument cluster; in the BMW X6, S4 is displayed, for example.\n\nThis position is recommended for a performance- oriented driving style."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+
+            <TextView
+                android:id="@+id/ActivatingMSmodeText"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/activatingSportModeDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Activating the M/S manual mode"
+                android:textColor="@color/black"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/ActivatingMSmodeTextDescription"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/ActivatingMSmodeText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Push the selector lever to the left out of transmission position D.\n\nPush the selector lever forward or backward.\n\nManual mode becomes active and the gear is changed.\n\nThe engaged gear is displayed in the instrument cluster, e.g., M1.\n▷ To shift down: press the selector lever forward.\n▷ To shift up: press the selector lever backward.\n\nThe transmission only shifts up or down if the rpm and vehicle speed are appropriate. If the engine speed is too high, the transmission does not shift down.\n\nThe selected gear is briefly displayed in the instrument panel, followed by the current gear."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+
+            <TextView
+                android:id="@+id/EndingMSmodeText"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/ActivatingMSmodeTextDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Ending the sport program/manual mode"
+                android:textColor="@color/black"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/EndingMSmodeTextDescription"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/EndingMSmodeText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Push the selector lever to the right.\nD is displayed in the instrument cluster."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+
+            <TextView
+                android:id="@+id/GearChangeText"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/EndingMSmodeTextDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="BMW X6: Gear change using the shift paddles on the steering wheel"
+                android:textColor="@color/black"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/GearChangeDescription"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/GearChangeText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:text="The shifting paddles make it possible to quickly change gears since both hands can remain on the steering wheel.\n\n▷ If the shift paddles on the steering wheel are used to shift gears while in automatic mode D, the transmission temporarily switches to manual mode.\n▷ If the shift paddles are not used to accelerate or shift gears for a certain amount of time, the transmission switches back to automatic mode D.\n\nWith the transmission position M/S selected, the manual mode remains active."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/GearChangeImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/GearChangeDescription"
+                android:layout_centerHorizontal="false"
+                android:src="@drawable/gear_change" />
+
+            <TextView
+                android:id="@+id/GearChangeImageDescription"
+                android:layout_below="@+id/GearChangeImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:textAlignment="center"
+                android:text="BMW X6: Gear change using the shift paddles on the steering wheel"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/GearChangeSubDescription"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/GearChangeImageDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:text="▷ Shift up: pull right shift paddle.\n▷ Shift down: pull left shift paddle.\n\nThe vehicle only shifts up or down at appropriate engine and road speeds, e.g., it does not shift down if the engine speed is too high.\n\nThe selected gear is briefly displayed in the instrument cluster, followed by the current gear."
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+
+</androidx.core.widget.NestedScrollView>

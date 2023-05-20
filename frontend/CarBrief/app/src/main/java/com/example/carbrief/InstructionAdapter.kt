@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.imageview.ShapeableImageView
 
-class InstructionAdapter(private val instructionList: ArrayList<Instruction>) : RecyclerView.Adapter<InstructionAdapter.ViewHolder>() {
+class InstructionAdapter(private val instructionList: ArrayList<Instruction>, val listener: ItemClickListener) : RecyclerView.Adapter<InstructionAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
@@ -18,14 +18,25 @@ class InstructionAdapter(private val instructionList: ArrayList<Instruction>) : 
         return instructionList.size
     }
 
+    interface ItemClickListener{
+        fun onItemClick(position: Int, tvHeading: String)
+    }
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentItem = instructionList[position]
         holder.titleImage.setImageResource(currentItem.titleImage)
         holder.tvHeading.text = currentItem.heading
     }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val titleImage: ShapeableImageView = itemView.findViewById(R.id.title_image)
         val tvHeading: TextView = itemView.findViewById(R.id.tvHeading)
+
+        init {
+            itemView.setOnClickListener {
+                val position = adapterPosition
+                listener.onItemClick(position, tvHeading.text as String)
+            }
+        }
     }
 }

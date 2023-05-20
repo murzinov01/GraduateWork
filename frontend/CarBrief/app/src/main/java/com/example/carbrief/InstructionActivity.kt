@@ -12,12 +12,13 @@ import androidx.recyclerview.widget.RecyclerView
 import java.io.FileInputStream
 
 
-class InstructionActivity : AppCompatActivity() {
+class InstructionActivity : AppCompatActivity(), InstructionAdapter.ItemClickListener {
 
     private lateinit var newRecyclerView: RecyclerView
     private lateinit var instructionList: ArrayList<Instruction>
     private lateinit var imageIds: ArrayList<Int>
     private lateinit var headings: ArrayList<String>
+    private var labelsSet = mutableSetOf<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,11 +27,10 @@ class InstructionActivity : AppCompatActivity() {
         val toolbar: Toolbar = findViewById<View>(R.id.toolbarInstructions) as Toolbar
 
         toolbar.setNavigationOnClickListener {
-            val intent = Intent(this, CameraActivity::class.java)
+            val intent = Intent(this, BottomNavigationActivity::class.java)
             startActivity(intent)
             finish()
         }
-
 
         var bmp: Bitmap? = null
         val filename = intent.getStringExtra("image")
@@ -45,35 +45,46 @@ class InstructionActivity : AppCompatActivity() {
         val classes = intent.getFloatArrayExtra("classes")
         val labels = intent.getStringArrayExtra("labels")
 
-        println("CLASSES NEW")
-        println(classes)
-
         headings = arrayListOf()
         imageIds = arrayListOf()
 
+        val detectedLabels = arrayListOf<String>()
         intent.getFloatArrayExtra("score")?.forEachIndexed { index, fl ->
             if (fl >= 0.45) {
                 val label = classes?.get(index)?.let { labels?.get(it.toInt()) }
-                headings.add(String.format("Instruction for %s", label))
-                imageIds.add(R.drawable.test_image)
+
+                if (label != null && !labelsSet.contains(label)) {
+                    detectedLabels.add(label)
+                    labelsSet.add(label)
+                }
             }
+        }
+        detectedLabels.sort()
+        for (label in detectedLabels) {
+            topicsOnLabelsMapping[label]?.let { headings.add(getString(it)) }
+            picturesOnLabelsMapping[label]?.let { imageIds.add(it) }
         }
         newRecyclerView = findViewById(R.id.recyclerView)
         newRecyclerView.layoutManager = LinearLayoutManager(this)
         newRecyclerView.setHasFixedSize(true)
 
         instructionList = arrayListOf()
-        getUserData()
+        showInstructionsList()
     }
 
-    private fun getUserData() {
+    private fun showInstructionsList() {
 
         for(i in imageIds.indices) {
             val instruction = Instruction(imageIds[i], headings[i])
             instructionList.add(instruction)
         }
 
-        newRecyclerView.adapter = InstructionAdapter(instructionList)
+        newRecyclerView.adapter = InstructionAdapter(instructionList, this@InstructionActivity)
+    }
 
+    override fun onItemClick(position: Int, tvHeading: String) {
+        val intent = Intent(this, InstructionEntry::class.java)
+        intent.putExtra("title", tvHeading)
+        startActivity(intent)
     }
 }
