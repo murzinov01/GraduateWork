@@ -3,7 +3,7 @@ import os
 
 # DATABASE
 # SQLALCHEMY_DATABASE_URL = os.getenv("SQLALCHEMY_DATABASE_URL", "postgresql://postgres:postgrespw@localhost:5432")
-SQLALCHEMY_DATABASE_URL = os.getenv("SQLALCHEMY_DATABASE_URL", "").replace("postgres", "postgresql")
+SQLALCHEMY_DATABASE_URL = os.getenv("SQLALCHEMY_DATABASE_URL", "")
 print(f"{SQLALCHEMY_DATABASE_URL=}")
 
 # JWT Generation
