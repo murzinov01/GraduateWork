@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    restart: always
+    volumes:
+      - .:/srv/www/
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - SQLALCHEMY_DATABASE_URL=postgresql://postgres:postgrespw@db:5432
+    links:
+      - db
+  db:
+    image: postgres:13.1
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgrespw
+    ports:
+      - "5432:5432"
+
+volumes:
+  db:
+    driver: local
