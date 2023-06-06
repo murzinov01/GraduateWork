@@ -1,5 +1,6 @@
 package com.example.carbrief
 
+import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
@@ -17,6 +18,7 @@ import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.example.carbrief.ml.Model0
 import com.example.carbrief.ml.Model2
@@ -71,8 +73,6 @@ class CameraActivity : AppCompatActivity() {
 
         imageView = findViewById(R.id.imageView)
         textureView = findViewById(R.id.textureView)
-
-        getPermission()
 
         for (i in labels.indices) {
             labelsOnColors[labels[i]] = colors[i]
@@ -269,6 +269,7 @@ class CameraActivity : AppCompatActivity() {
         cameraDevice.close()
     }
 
+
     @SuppressLint("MissingPermission")
     private fun openCamera() {
         cameraManager.openCamera(cameraManager.cameraIdList[0], object:CameraDevice.StateCallback(){
@@ -303,9 +304,9 @@ class CameraActivity : AppCompatActivity() {
     }
 
     private fun getPermission() {
-        if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-            requestPermissions(arrayOf(android.Manifest.permission.CAMERA), 101)
-        }
+        //if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(arrayOf(Manifest.permission.CAMERA), 101)
+        //}
     }
 
     override fun onRequestPermissionsResult(

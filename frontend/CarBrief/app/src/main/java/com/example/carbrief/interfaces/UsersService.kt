@@ -16,6 +16,7 @@ import io.ktor.http.*
 interface UsersService {
 
     suspend fun createUsers(userCreate: UserCreateModel, inputEmail: EditText, inputPassword: EditText): UserProfileModel?
+    suspend fun getProfile(accessToken: String): UserProfileModel?
 
     companion object {
         fun create(): UsersService {

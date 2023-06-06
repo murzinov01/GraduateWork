@@ -57,4 +57,25 @@ class UsersServiceImpl(
             null
         }
     }
+
+    override suspend fun getProfile(accessToken: String): UserProfileModel? {
+        return try {
+            client.get<UserProfileModel> {
+                url(ApiRoutes.PROFILE)
+                header("Authorization", "Bearer $accessToken")
+            }
+        } catch (ex: RedirectResponseException) {
+            // 3xx - responses
+            println("Error: ${ex.response.status.description}")
+            null
+        } catch (ex: ClientRequestException) {
+            // 4xx - responses
+            println("Error: ${ex.response.status.description}")
+            null
+        } catch (ex: ServerResponseException) {
+            // 5xx - response
+            println("Error: ${ex.response.status.description}")
+            null
+        }
+    }
 }
