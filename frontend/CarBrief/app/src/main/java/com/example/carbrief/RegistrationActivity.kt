@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.lifecycleScope
@@ -84,6 +85,8 @@ class RegistrationActivity : AppCompatActivity() , CoroutineScope {
                         inputPassword,
                     )
                     println(result)
+//                    val toast = Toast.makeText(inputEmail.context, result.toString(), Toast.LENGTH_LONG)
+//                    toast.show()
                     switchToLogin(result)
                 }
 

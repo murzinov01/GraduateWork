@@ -1,13 +1,17 @@
 package com.example.carbrief
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import com.example.carbrief.interfaces.AuthService
+import com.example.carbrief.interfaces.UsersService
 import com.example.carbrief.model.UserLoginModel
 import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
@@ -21,6 +25,7 @@ class LoginActivity : AppCompatActivity(), CoroutineScope {
     private lateinit var inputUsername: EditText
     private lateinit var inputPassword: EditText
     private lateinit var propertyRepo: PropertyRepo
+    private lateinit var sharedPref: SharedPreferences
 
     override fun onDestroy() {
         super.onDestroy()
@@ -30,6 +35,9 @@ class LoginActivity : AppCompatActivity(), CoroutineScope {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         propertyRepo = PropertyRepo(this)
+        sharedPref = getSharedPreferences(
+            getString(R.string.preference_file_key), Context.MODE_PRIVATE
+        )
         val authApi = AuthService.create()
 
         setContentView(R.layout.activity_login)
@@ -61,13 +69,31 @@ class LoginActivity : AppCompatActivity(), CoroutineScope {
                         UserLoginModel(username, password),
                         inputPassword,
                     )
+//                    val toast = Toast.makeText(inputPassword.context, result.toString(), Toast.LENGTH_LONG)
+//                    toast.show()
 
                     if (result != null) {
                         result.access_token?.let { it1 -> propertyRepo.saveProperty("accessToken", it1) }
                         result.refresh_token?.let { it1 -> propertyRepo.saveProperty("refreshToken", it1) }
                         result.token_type?.let { it1 -> propertyRepo.saveProperty("tokenType", it1) }
                     }
-                    result
+
+                    if (result?.access_token != null) {
+                        val usersApi = UsersService.create()
+                        launch {
+                            val result_profile = usersApi.getProfile(result.access_token!!)
+                            if (result_profile != null) {
+                                with (sharedPref.edit()) {
+                                    putString("userNameTextField", result_profile.username.toString())
+                                    println("userNameTextField")
+                                    // println(result.username.toString())
+                                    putString("emailTextField", result_profile.email.toString())
+                                    clear()
+                                    commit()
+                                }
+                            }
+                        }
+                    }
                 }
                 if (result != null) {
                     switchToBottomNavigation()

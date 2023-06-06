@@ -9,12 +9,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
 import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
+import com.example.carbrief.interfaces.UsersService
+import com.example.carbrief.model.UserCreateModel
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.imageview.ShapeableImageView
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.*
+import kotlin.coroutines.CoroutineContext
 
 
 class Profile : Fragment() {
@@ -23,8 +28,11 @@ class Profile : Fragment() {
     private lateinit var profileImageButton: FloatingActionButton
     private lateinit var sharedPref: SharedPreferences
     private lateinit var profileImageUriKey: String
+    private lateinit var userNameTextField: TextView
+    private lateinit var emailTextField: TextView
     private val profileImageName = "profile_image_name"
     private var profileImageBitMap: Bitmap? = null
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,12 +43,10 @@ class Profile : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        propertyRepo = PropertyRepo(view.context)
         sharedPref = view.context.getSharedPreferences(
             getString(R.string.preference_file_key), Context.MODE_PRIVATE
         )
+        propertyRepo = PropertyRepo(view.context)
         profileImageUriKey = getString(R.string.profile_image_uri)
         val profileImageUri = sharedPref.getString(profileImageUriKey, "").toString()
 
@@ -58,6 +64,30 @@ class Profile : Fragment() {
 
         profileImage = view.findViewById(R.id.ProfileImage)
         profileImageButton = view.findViewById(R.id.ProfileImageButton)
+        userNameTextField = view.findViewById(R.id.UserNameTextField)
+        emailTextField = view.findViewById(R.id.EmailTextField)
+
+        val userNameTextFieldSaved = sharedPref.getString("userNameTextField", "")
+        val emailTextFieldSaved = sharedPref.getString("emailTextField", "")
+
+
+        if (userNameTextFieldSaved != "" && emailTextFieldSaved != "") {
+            userNameTextField.text = userNameTextFieldSaved
+            emailTextField.text = emailTextFieldSaved
+        }
+
+        val btnSaveChanges = view.findViewById<Button>(R.id.SaveChanges)
+        btnSaveChanges.setOnClickListener {
+
+            with (sharedPref.edit()) {
+                putString("userNameTextField", userNameTextField.text.toString())
+                putString("emailTextField", emailTextField.text.toString())
+                clear()
+                commit()
+            }
+            val toast = Toast.makeText(btnSaveChanges.context, "SAVED!", Toast.LENGTH_SHORT)
+            toast.show()
+        }
 
         if (profileImageUri == "") {
             val contentPadding = 20
@@ -77,14 +107,12 @@ class Profile : Fragment() {
                 .maxResultSize(1080, 1080)	//Final image resolution will be less than 1080 x 1080(Optional)
                 .start()
         }
+
+        super.onViewCreated(view, savedInstanceState)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        println("RESULT CODE")
-        println(resultCode)
-        println("IMAGE URI")
-        println(data?.data)
         val imageUri = data?.data
         profileImage.setImageURI(data?.data)
         profileImage.setContentPadding(0, 0, 0, 0)

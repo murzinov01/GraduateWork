@@ -1,4 +1,4 @@
-ы<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -46,7 +46,7 @@
                 android:layout_marginTop="20dp"
                 app:shapeAppearanceOverlay="@style/circular"
                 app:strokeWidth="2dp"
-                android:padding="2dp"
+                android:padding="7dp"
                 app:strokeColor="@color/primary_900"
                 android:src="@drawable/edit_profile"
                 android:tag=" "
@@ -98,7 +98,7 @@
                     android:fontFamily="@font/roboto_bold"
                     android:text="Username"
                     android:textColor="@color/black"
-                    android:textSize="26sp"
+                    android:textSize="22sp"
                     />
 
                 <RelativeLayout
@@ -108,17 +108,33 @@
                     android:layout_below="@+id/UserNameText"
                     android:background="@color/grey"/>
 
-                <TextView
+<!--                <TextView-->
+<!--                    android:id="@+id/UserNameTextField"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="@font/roboto_regular"-->
+<!--                    android:layout_alignParentRight="true"-->
+<!--                    android:layout_marginRight="50dp"-->
+<!--                    android:layout_alignBottom="@+id/UserNameText"-->
+<!--                    android:text="Ivanov Ivan"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    />-->
+
+                <EditText
+                    android:id="@+id/UserNameTextField"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_regular"
+                    android:layout_alignBottom="@+id/UserNameText"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="50dp"
-                    android:layout_alignBottom="@+id/UserNameText"
+
+                    android:background="@color/primary_50"
+                    android:fontFamily="@font/roboto_regular"
+                    android:paddingTop="10dp"
                     android:text="Ivanov Ivan"
                     android:textColor="@color/black"
-                    android:textSize="24sp"
-                    />
+                    android:textSize="20sp" />
 
             </RelativeLayout>
 
@@ -136,7 +152,7 @@
                     android:fontFamily="@font/roboto_bold"
                     android:text="Email"
                     android:textColor="@color/black"
-                    android:textSize="26sp"
+                    android:textSize="22sp"
                     />
 
                 <RelativeLayout
@@ -146,7 +162,10 @@
                     android:layout_below="@+id/EmailText"
                     android:background="@color/grey"/>
 
-                <TextView
+
+                <EditText
+                    android:background="@color/primary_50"
+                    android:id="@+id/EmailTextField"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_regular"
@@ -155,7 +174,7 @@
                     android:layout_alignBottom="@+id/EmailText"
                     android:text="email@mail.ru"
                     android:textColor="@color/black"
-                    android:textSize="24sp"
+                    android:textSize="20sp"
                     />
 
 
@@ -175,7 +194,7 @@
                     android:fontFamily="@font/roboto_bold"
                     android:text="Password"
                     android:textColor="@color/black"
-                    android:textSize="26sp"
+                    android:textSize="22sp"
                     />
 
                 <RelativeLayout
@@ -192,9 +211,9 @@
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="50dp"
                     android:layout_alignBottom="@+id/PasswordText"
-                    android:text="password"
+                    android:text="********"
                     android:textColor="@color/black"
-                    android:textSize="24sp"
+                    android:textSize="20sp"
                     />
 
 
@@ -211,7 +230,8 @@
             android:layout_gravity="bottom"
             android:gravity="center"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="50dp">
+
+            >
 
             <Button
                 android:id="@+id/SaveChanges"
